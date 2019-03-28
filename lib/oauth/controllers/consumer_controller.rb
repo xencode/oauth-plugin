@@ -96,12 +96,12 @@ module Oauth
               oauth_response = @token.client.send(method, oauth_response['Location'])
             end
 
-            render :text => oauth_response.body
+            render :plain => oauth_response.body
           else
-            render :text => "Token needed.", :status => 403
+            render :plain => "Token needed.", :status => 403
           end
         else
-          render :text => "Not allowed", :status => 403
+          render :plain => "Not allowed", :status => 403
         end
       end
 
